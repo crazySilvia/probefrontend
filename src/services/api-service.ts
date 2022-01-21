@@ -10,14 +10,18 @@ const BASEURL= INDEV ? "http://localhost:8080" : "";
 export const getAllUserName: () => Promise<string[]> = () =>
     axios.get(BASEURL+'user').then((response:AxiosResponse) => response.data)
 
-export const doLogin: () => Promise<String> = () =>
+export const doLogin: (name: String, pwd: String) => Promise<String> = () =>
     axios.post(BASEURL+'auth/login').then((response:AxiosResponse) => response.data)
 
 export const getAllArtikel: ()=> Promise<IArtikel[]> = () =>
     axios.get(BASEURL+'/api/zettel').then((response:AxiosResponse) => response.data)
 
-export const postArtikel = (name: String) =>
-    axios.post(BASEURL+'/api/zettel/addArtikel', {name: name})
+
+export const addArtikel=(artikel : IArtikel)=>
+    axios
+        .post(BASEURL+"/api/zettel/addArtikel", artikel )
+        .then((response:AxiosResponse) => response.data)
+
 
 //export const getArtikel = () =>
 //     axios
