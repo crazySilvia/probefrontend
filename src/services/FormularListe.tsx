@@ -17,7 +17,7 @@ export function FormularListe(props:FormularListProps) {
     //bei Klick auf erstellen mache Folgendes
     const handleSubmit:FormEventHandler<HTMLFormElement> = (event) => {
         //ruft setlist auf (in Mainpage)
-        const artikel:IArtikel={name: value}
+        const artikel:IArtikel={name: value, anzahl:1}
         props.updateList(artikel)
         //leert value
         setValue("")

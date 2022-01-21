@@ -16,7 +16,7 @@ export function Liste(){
     }, [])
     const updateArtikel = (newArtikel:IArtikel) => {
         //erstellt Kopie der Liste und
-        //fügt neue Liste direkt hinzu
+        //fügt neuen Artikel direkt hinzu
         const aktuellerStand:IArtikel[] = [...artikel, newArtikel];
         //setzt Liste auf aktuellem Stand
         setArtikel(aktuellerStand)
@@ -34,11 +34,21 @@ export function Liste(){
         setArtikel(aktuelleListe)
     }
 
+    //Todo minus implementieren
+    const minusArtikel = (index:Number)=>{
+
+    }
+
+    //todo plus implementieren
+    const plusArtikel = (index:Number)=>{
+
+    }
+
     return(<div>
              <FormularListe updateList={updateArtikel} />
              <ul>{artikel.map((value: IArtikel, index: number) =>
                  (<li key={index}>
-                     <Artikel artikel={value} index={index} button={deleteArtikel} />
+                     <Artikel artikel={value} index={index} button={deleteArtikel}  buttonminus={minusArtikel} buttonplus={plusArtikel}/>
                  </li>))}
              </ul>
              <button onClick={deleteList}>Liste löschen</button>

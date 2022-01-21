@@ -1,6 +1,7 @@
 
 import {getUserData, hello, isLoggedIn, login, register} from "../services/LoginService";
 import {ChangeEventHandler, MouseEventHandler, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function LoginForm () {
 
@@ -14,7 +15,7 @@ export default function LoginForm () {
     //Todo was passiert nach dem login???
     const onLogin: MouseEventHandler = (e) => {
         e.preventDefault()
-        login(userInput).then(() => updateHelloMessage()).catch(()=> alert("Invalid Credentials"))
+        login(userInput).then{useNavigate("/register")})
     }
 
     const onRegister: MouseEventHandler = (e) => {
