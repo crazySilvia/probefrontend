@@ -13,8 +13,6 @@ export default function Mainpage(){
         <div className="mainpage">
             <Header title="Zettel"/>
             <NavBar />
-            <LoginForm />
-
 
         </div>
     )
